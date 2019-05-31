@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Área Administrativa</title>
+</h:head>
+<h:body>
+	<h1><h:outputText value="Área - Administrador"/></h1>
+	<h:form>
+		<lu>
+			<li><p:commandButton value="Produto" action="/admin/form_produto.xhtml" /></li>
+			<li><p:commandButton value="Cliente" action="/publico/form_pessoa.xhtml"/></li>
+			<li><p:commandButton value="Pagamento" action="/admin/forma_pagamento.xhtml"/></li>
+			<li><p:commandButton value="Serviço" action="/admin/form_servico.xhtml"/></li>
+			<li>
+				<p:commandButton onclick="document.location='#{request.contextPath}/j_spring_security_logout'">Logout</p:commandButton>
+			</li>
+		</lu>
+	</h:form>
+</h:body>
+
+</html>

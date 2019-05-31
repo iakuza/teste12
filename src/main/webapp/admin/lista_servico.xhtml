@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Servico</title>
+</h:head>
+<h:body>
+	<h:form>
+		<div align="center">
+			<h:commandLink value="Inserir" action="#{servicoCtrl.actionInserir}"/>
+			
+			<h:dataTable value="#{servicoCtrl.listagem}" var="a">
+				<f:facet name="header"><h:outputLabel value="Lista de Serviços"/></f:facet>
+				<h:column>
+					<f:facet name="header"><h:outputLabel value="Código"/></f:facet>
+					<h:outputLabel value="#{a.id}"/>
+				</h:column>
+				<h:column>
+					<f:facet name="header"><h:outputLabel value="Nome"/></f:facet>
+					<h:outputLabel value="#{a.nome}"/>
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header"><h:outputLabel value="Descrição"/></f:facet>
+					<h:outputLabel value="#{a.descricao}"/>
+				</h:column>
+				<h:column>
+					<f:facet name="header"><h:outputLabel value="Unidade"/></f:facet>
+					<h:outputLabel value="#{a.und}"/>
+				</h:column>
+				<h:column>
+					<f:facet name="header"><h:outputLabel value="Valor"/></f:facet>
+					<h:outputLabel value="#{a.valor}"/>
+				</h:column>
+				
+				<h:column>
+					<h:commandLink value="Alterar" action="#{servicoCtrl.actionAlterar(p)}"/>
+				</h:column>
+				<h:column>
+					<h:commandLink value="Excluir" action="#{servicoCtrl.actionExcluir(p)}">
+					</h:commandLink>
+				</h:column>
+			</h:dataTable>
+		</div>
+	</h:form>
+</h:body>
+</html>
